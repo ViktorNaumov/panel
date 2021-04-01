@@ -1,14 +1,15 @@
 import React from "react";
 import { Route } from "react-router";
 import Workbar from "../constructions/workbar";
-import Formwindow from "./formwindow";
+import Holderswindow from "./holderswindow";
 
 const Workspace = () => {
   return (
     <div className="workspace">
       <div className="flexcol">
       <Route path="/handinput" render={() => <Workbar />}/> 
-        <Formwindow />
+      <Route path="/handinput/holders" render={()=> <Holderswindow />} />
+
       </div>
     </div>
   );
