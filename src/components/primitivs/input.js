@@ -1,7 +1,6 @@
 import React from "react";
 
 const Input = ({ input, meta, ...props }) => {
-    debugger
   return (
     <div className="input">
       <div className="input_name">{props.lable}</div>

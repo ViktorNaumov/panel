@@ -1,4 +1,5 @@
 import { setHolders } from "../API/API";
+import {reset} from "redux-form"
 
 let initialState = {
   a: 12,
@@ -30,9 +31,13 @@ export const setHoldersThunkCreator =(value)=>{
         setHolders(value)
         .then((response)=>{
             if(response){
+              console.log(response.data)
                 if(response.data){
-                    if(response.data.resultcode===0){
+                  console.log(response.data.resultCode)
+                    if(response.data.resultCode===0){
+                        console.log("inside")
                         dispatch(setHoldersCreator())
+                        dispatch(reset('holders'))
                     }
                 }
             }

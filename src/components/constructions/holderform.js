@@ -157,7 +157,7 @@ const Form = (props) => {
                 placeholder={"00-0000"}
                 component={Input}
                 lable={"PS1 cir"}
-                name={"PS1tri"}
+                name={"PS1cir"}
                 required
               />
               <Field
@@ -233,6 +233,7 @@ const HoldersReduxForm = reduxForm({ form: "holders" })(Form);
 const holdersform = (props) => {
   const onSubmit = (values) => {
     props.setholders(values);
+    console.log("кнопка нажата")
   };
 
   return <HoldersReduxForm onSubmit={onSubmit} />;
