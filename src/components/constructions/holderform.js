@@ -132,13 +132,13 @@ const Form = (props) => {
                 <Field
                   component={Input}
                   lable={"D min cir"}
-                  name={"Dmintri"}
+                  name={"Dmincir"}
                   required
                 />
                 <Field
                   component={Input}
                   lable={"D max cir"}
-                  name={"Dmaxtri"}
+                  name={"Dmaxcir"}
                   required
                 />
                 <Field
@@ -207,7 +207,76 @@ const Form = (props) => {
                 />
               </div>
             </div>
-            <div className="sec"></div>
+            <div className="sec">
+              <div className="flexcol">
+                <Field
+                  component={Input}
+                  lable={"d min sec"}
+                  name={"dminsec"}
+                  required
+                />
+                <Field
+                  component={Input}
+                  lable={"d max sec"}
+                  name={"dmaxsec"}
+                  required
+                />
+                <Field
+                  component={Input}
+                  lable={"h min sec"}
+                  name={"hminsec"}
+                  required
+                />
+                <Field
+                  component={Input}
+                  lable={"h max sec"}
+                  name={"hmaxsec"}
+                  required
+                />
+                
+                <Field
+                  component={Input}
+                  lable={"alpha min sec"}
+                  name={"alphaminsec"}
+                  required
+                />
+                <Field
+                  component={Input}
+                  lable={"alpha max sec"}
+                  name={"alphamaxsec"}
+                  required
+                />
+                <Field
+                  placeholder={"00-0000"}
+                  component={Input}
+                  lable={"PS1 sec"}
+                  name={"PS1was"}
+                  required
+                />
+                <Field
+                  placeholder={"00-0000"}
+                  component={Input}
+                  lable={"PS2 sec"}
+                  name={"PS2sec"}
+                  required
+                />
+                <Field
+                  placeholder={"max 00"}
+                  component={Input}
+                  lable={"PS3 sec"}
+                  name={"PS3sec"}
+                  required
+                />
+                <Field
+                  placeholder={"0"}
+                  component={Input}
+                  lable={"PS1 sec"}
+                  name={"PS1sec"}
+                  required
+                />
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
