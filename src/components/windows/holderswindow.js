@@ -1,12 +1,12 @@
 import React from "react";
-import Formwindow from "./formwindow";
+import Formholwindow from "./formholwindow";
 
 const Holderswindow = ()=>{
     return (
         <div className="holwin">
             <div className="flexcol">
                 <div className="holformwin">
-                    <Formwindow/>
+                    <Formholwindow/>
                 </div>
                 <div className="holitemwin">
 

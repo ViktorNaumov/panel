@@ -116,12 +116,15 @@
   margin:1%;
 }
 .selhol {
-  margin-top:3%;
+  margin-top:10px;
   margin-left: 1%;
   margin-right: 1%;
 }
 .holders {
   min-width: 800px;
+}
+.pushholders{
+  margin: 10px;
 }
 .select_name {
   float:left
@@ -133,7 +136,10 @@
   float:left
 }
 .input {
-  margin-top: 2%;
+  margin-top: 5px;
+}
+.select {
+  margin-top: 5px;
 }
 .input input{
   width: 30%;
@@ -163,4 +169,28 @@
 }
 .pushholders {
   margin-left: 2%;
+}
+
+.stockinput div.input {
+  width: 15%;
+  min-width: 200px;
+  height: 20px;
+}
+
+.stockinput div.select {
+  width: 15%;
+  min-width: 200px;
+  height: 20px;
+}
+
+.stockfield {
+  margin: 2%;
+}
+.stockinput{
+  background-color:turquoise;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.stock1 {
+  margin-top: 10px;
 }

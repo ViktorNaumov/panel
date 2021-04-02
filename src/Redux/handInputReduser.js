@@ -1,4 +1,4 @@
-import { setHolders } from "../API/API";
+import { setHolders, setstock } from "../API/API";
 import {reset} from "redux-form"
 
 let initialState = {
@@ -6,6 +6,7 @@ let initialState = {
 };
 
 const SET_HOLDERS = "SET-HOLDERS";
+const SET_STOCK = "SET-STOCK";
 
 const handInputReduser = (state = initialState, action) => {
   let stateCopy;
@@ -13,6 +14,8 @@ const handInputReduser = (state = initialState, action) => {
 
   switch (action.type) {
     case SET_HOLDERS:
+        return stateCopy
+    case SET_STOCK:
         return stateCopy
     default:
       return state;
@@ -31,11 +34,8 @@ export const setHoldersThunkCreator =(value)=>{
         setHolders(value)
         .then((response)=>{
             if(response){
-              console.log(response.data)
                 if(response.data){
-                  console.log(response.data.resultCode)
                     if(response.data.resultCode===0){
-                        console.log("inside")
                         dispatch(setHoldersCreator())
                         dispatch(reset('holders'))
                     }
@@ -44,5 +44,29 @@ export const setHoldersThunkCreator =(value)=>{
         })
     }
 }
+
+export const setStockCreator = (value) => {
+  return {
+    type: SET_STOCK,
+    value: value,
+  };
+};
+
+export const setstockThunkCreator=(value)=>{
+  return(dispatch)=>{
+    setstock(value)
+    .then((response)=>{
+      if (response){
+        if(response.data){
+          if(response.data.resultCode===0){
+            dispatch(setStockCreator())
+            dispatch(reset('stock'))
+        }
+        }
+      }
+    })
+  }
+}
+
 
 export default handInputReduser;

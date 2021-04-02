@@ -1,6 +1,6 @@
 import React from "react";
 import HolderForm from "../constructions/holderform"
-const Formwindow =()=>{
+const Formholwindow =()=>{
     return (
        <div className="formwindow">
            <HolderForm/>
@@ -8,4 +8,4 @@ const Formwindow =()=>{
     )
 }
 
-export default Formwindow
+export default Formholwindow
