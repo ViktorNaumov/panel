@@ -7,7 +7,8 @@ import Input from "../primitivs/input";
 
 const Form = (props) => {
 
-  let arr2 = [1, 2, 3];
+
+  
   return (
     <form onSubmit={props.handleSubmit}>
       <div className="selhol">
@@ -15,7 +16,7 @@ const Form = (props) => {
           <div className="selection">
             <div className="flexcol">
               <Field component={Input} name={"name"} lable={"Имя"} required />  
-              <Field component={Select} name={"thikness"} arr={arr2} required />
+              <Field component={Select} name={"thikness"} arr={props.thickness} required />
 
             </div>
           </div>
@@ -59,7 +60,7 @@ const Form = (props) => {
                   placeholder={"00-0000"}
                   component={Input}
                   lable={"PS2 rec"}
-                  name={"PS2rec  "}
+                  name={"PS2rec"}
                   required
                 />
               </div>
@@ -250,7 +251,7 @@ const Form = (props) => {
                   placeholder={"00-0000"}
                   component={Input}
                   lable={"PS1 sec"}
-                  name={"PS1was"}
+                  name={"PS1sec"}
                   required
                 />
                 <Field
@@ -270,8 +271,8 @@ const Form = (props) => {
                 <Field
                   placeholder={"0"}
                   component={Input}
-                  lable={"PS1 sec"}
-                  name={"PS1sec"}
+                  lable={"PS4 sec"}
+                  name={"PS4sec"}
                   required
                 />
               </div>
@@ -293,11 +294,14 @@ const holdersform = (props) => {
     console.log("кнопка нажата")
   };
 
-  return <HoldersReduxForm onSubmit={onSubmit} />;
+  return <HoldersReduxForm onSubmit={onSubmit} thickness={props.thickness} />;
 };
 
 const mapStateToProps = (state) => {
-  return {};
+
+  return {
+    thickness:state.handinput.thickness
+  };
 };
 const mapDispatchToprops = (dispatch) => {
   return {
