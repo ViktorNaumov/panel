@@ -14,6 +14,7 @@ class HoldWindContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+
   return {
     thicknessarr: state.handinput.thickness,
   };

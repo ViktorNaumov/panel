@@ -34,21 +34,21 @@ const handInputReduser = (state = initialState, action) => {
       for (let i = 0; i < action.thickness.length; i++) {
         arr.push(action.thickness[i].thickness);
       }
-      stateCopy = { ...stateCopy.thickness, thickness: arr };
+      stateCopy = { ...stateCopy,...stateCopy.thickness, thickness: arr };
       return stateCopy;
     case GET_STEEL:
       let arr0 = [];
       for (let i = 0; i < action.steel.length; i++) {
         arr0.push(action.steel[i].steel);
       }
-      stateCopy = { ...stateCopy, ...stateCopy.steel, steel: arr0 };
+      stateCopy = { ...stateCopy,...stateCopy.steel, steel: arr0 };
       return stateCopy;
     case GET_NAMEHOLDER:
       let arr1 = [];
       for (let i = 0; i < action.nameholder.length; i++) {
         arr1.push(action.nameholder[i].name);
       }
-      stateCopy = { ...stateCopy, ...stateCopy.nameholder, nameholder: arr1 };
+      stateCopy = {...stateCopy,...stateCopy.nameholder, nameholder: arr1 };
       return stateCopy;
     default:
       return state;

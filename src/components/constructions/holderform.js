@@ -299,6 +299,7 @@ const holdersform = (props) => {
 
 const mapStateToProps = (state) => {
 
+
   return {
     thickness:state.handinput.thickness
   };

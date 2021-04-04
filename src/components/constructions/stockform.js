@@ -89,6 +89,7 @@ const stockform = (props) => {
 };
 
 const mapStateToProps = (state) => {
+
   return {
     steelarr: state.handinput.steel,
     thicknessarr: state.handinput.thickness,
