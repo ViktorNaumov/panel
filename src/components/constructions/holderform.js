@@ -5,7 +5,7 @@ import Select from "../primitivs/select";
 import { setHoldersThunkCreator } from "../../Redux/handInputReduser";
 import Input from "../primitivs/input";
 
-const Form = (props) => {
+const Formhol = (props) => {
 
 
   
@@ -286,7 +286,7 @@ const Form = (props) => {
   );
 };
 
-const HoldersReduxForm = reduxForm({ form: "holders" })(Form);
+const HoldersReduxForm = reduxForm({ form: "holders" })(Formhol);
 
 const holdersform = (props) => {
   const onSubmit = (values) => {

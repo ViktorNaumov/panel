@@ -5,7 +5,7 @@ import Select from "../primitivs/select";
 import Input from "../primitivs/input";
 import { setstockThunkCreator } from "../../Redux/handInputReduser";
 
-const Form = (props) => {
+const Formstock = (props) => {
 
   return (
     <form onSubmit={props.handleSubmit}>
@@ -71,7 +71,7 @@ const Form = (props) => {
   );
 };
 
-const SetStockReduxForm = reduxForm({ form: "stock" })(Form);
+const SetStockReduxForm = reduxForm({ form: "stock" })(Formstock);
 
 const stockform = (props) => {
   const onSubmit = (value) => {

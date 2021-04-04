@@ -7,7 +7,8 @@ const Nav =()=>{
     return (
         <div className="nav">
           <NavLink to ="/handinput"><NavItem name ="Ручной ввод"/></NavLink>
-          
+          <NavLink to ="/orders"><NavItem name ="Заказы"/></NavLink>
+          <NavLink to ="/production"><NavItem name ="Производство"/></NavLink>
         </div>
     )
 }
