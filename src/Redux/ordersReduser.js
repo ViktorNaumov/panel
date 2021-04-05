@@ -7,7 +7,8 @@ const initialState = {
     errorOrderCost: { error: false, mesage: "Сумма заказа не совпадает" },
     errorSetOrderPayment: { error: false, mesage: "Ошибка сервера" },
     errorAcseptingPayment: { error: false, mesage: "Запись не сделана" },
-    acseptingPayments: { acsepting: false, mesage: "Данные записаны" }
+    acseptingPayments: { acsepting: false, mesage: "Данные записаны" },
+    
 }
 
 const ERROR_ORDER = "ERROR-ORDER";
@@ -22,19 +23,19 @@ const ordersReduser = (state = initialState, action) => {
 
     switch (action.type) {
         case ERROR_ORDER:
-            stateCopy = { ...stateCopy, ...stateCopy.errorOrder.errore, errore: true }
+            stateCopy.errorOrder = { ...stateCopy.errorOrder, error: true }
             return stateCopy
         case ERROR_ORDER_COST:
-            stateCopy = { ...stateCopy, ...stateCopy.errorOrderCost.errore, errore: true }
+            stateCopy = { ...stateCopy.errorOrderCost, error: true }
             return stateCopy
         case ERROR_SET_ORDER_PAYMENT:
-            stateCopy = { ...stateCopy, ...stateCopy.errorSetOrderPayment.errore, errore: true }
+            stateCopy = { ...stateCopy.errorSetOrderPayment, error: true }
             return stateCopy
         case ERROR_ACSEPTING_PAYMENT:
-            stateCopy = { ...stateCopy, ...stateCopy.errorAcseptingPayment.errore, errore: true }
+            stateCopy = {  ...stateCopy.errorAcseptingPayment, error: true }
             return stateCopy
         case ACSEPTING_PAYMENT:
-            stateCopy = { ...stateCopy, ...stateCopy.acseptingPayments, acseptingPayments: true }
+            stateCopy = { ...stateCopy.acseptingPayments, acseptingPayments: true }
             return stateCopy
         default:
             return state
@@ -80,11 +81,12 @@ export const acseptingPaymentCreator = () => {
 }
 
 
-export const getOrderThunkCreator = (value) => {
+export const setOrderPaymentThunkCreator = (value) => {
     return (dispatch) => {
         getOrder(value.number)
             .then((response) => {
-                if (response) {
+                console.log(response.data.resultCode)
+                if (response.data.resultCode === 0) {
                     getOrderCost(value.cost)
                         .then((response) => {
                             if (response) {
@@ -94,21 +96,21 @@ export const getOrderThunkCreator = (value) => {
                                             getOrderPayment(value.number)
                                                 .then((response) => {
                                                     if (response) {
-                                                        acseptingPaymentCreator()
+                                                        dispatch(acseptingPaymentCreator())
                                                     } else {
-                                                        errorAcseptingPaymentCreator()
+                                                        dispatch(errorAcseptingPaymentCreator())
                                                     }
                                                 })
                                         } else {
-                                            errorSetOrderPaymentCreator()
+                                            dispatch(errorSetOrderPaymentCreator())
                                         }
                                     })
                             } else {
-                                errorOrderCostCreator()
+                                dispatch(errorOrderCostCreator())
                             }
                         })
                 } else {
-                    errorOrderCreator()
+                    dispatch(errorOrderCreator())
                 }
 
 
