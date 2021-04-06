@@ -36,6 +36,13 @@ const Formpay = (props) => {
           {props.acseptingPayments.acsepting ? (
             <output>{props.acseptingPayments.mesage}</output>
           ) : null}
+           {props.errorOrder.error ? (
+            <output>{props.errorOrder.mesage}</output>
+          ) : null}
+            {props.errorWasPaid.waspaid ? (
+            <output>{props.errorWasPaid.mesage}</output>
+          ) : null} 
+
         </div>
         <div className="payfield">
           <button className="pushpay">Ввод</button>
@@ -50,7 +57,6 @@ const SetPayReduxForm = reduxForm({ form: "Pay" })(Formpay);
 const payform = (props) => {
   const onSubmit = (value) => {
     props.setOrderPayment(value);
-    console.log("кнопка нажата")
   };
 
   return (
@@ -59,15 +65,19 @@ const payform = (props) => {
       errorSetOrderPayment={props.errorSetOrderPayment}
       errorAcseptingPayment={props.errorAcseptingPayment}
       acseptingPayments={props.acseptingPayments}
+      errorOrder ={props.errorOrder}
+      errorWasPaid = {props.errorWasPaid}
     />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
+    errorOrder: state.orders.errorOrder,
     errorSetOrderPayment: state.orders.errorSetOrderPayment,
     errorAcseptingPayment: state.orders.errorAcseptingPayment,
     acseptingPayments: state.orders.acseptingPayments,
+    errorWasPaid: state.orders.errorWasPaid
   };
 };
 const mapDispatchToprops = (dispatch) => {
