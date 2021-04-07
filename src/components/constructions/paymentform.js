@@ -42,7 +42,9 @@ const Formpay = (props) => {
             {props.errorWasPaid.waspaid ? (
             <output>{props.errorWasPaid.mesage}</output>
           ) : null} 
-
+          {props.errorOrderCost.error ? (
+            <output>{props.errorOrderCost.mesage}</output>
+          ) : null} 
         </div>
         <div className="payfield">
           <button className="pushpay">Ввод</button>
@@ -66,6 +68,7 @@ const payform = (props) => {
       errorAcseptingPayment={props.errorAcseptingPayment}
       acseptingPayments={props.acseptingPayments}
       errorOrder ={props.errorOrder}
+      errorOrderCost ={props.errorOrderCost}
       errorWasPaid = {props.errorWasPaid}
     />
   );
@@ -74,6 +77,7 @@ const payform = (props) => {
 const mapStateToProps = (state) => {
   return {
     errorOrder: state.orders.errorOrder,
+    errorOrderCost: state.orders.errorOrderCost,
     errorSetOrderPayment: state.orders.errorSetOrderPayment,
     errorAcseptingPayment: state.orders.errorAcseptingPayment,
     acseptingPayments: state.orders.acseptingPayments,
