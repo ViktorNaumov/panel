@@ -2,7 +2,6 @@ import { getOrder, getOrderCost, setOrderPayment, getOrderPayment } from "../API
 
 
 const initialState = {
-    a: 12,
     errorOrder: { error: false, mesage: "номер заказа не найден" },
     errorOrderCost: { error: false, mesage: "Сумма заказа не совпадает" },
     errorSetOrderPayment: { error: false, mesage: "Ошибка сервера" },
@@ -70,7 +69,7 @@ const ordersReduser = (state = initialState, action) => {
             stateCopy.errorOrderCost = { ...state.errorOrderCost, error: false }
             stateCopy.errorSetOrderPayment = { ...state.errorSetOrderPayment, error: false }
             stateCopy.errorAcseptingPayment = { ...state.errorAcseptingPayment, error: false }
-            stateCopy.acseptingPayments = { ...state.acseptingPayments, acseptingPayments: false }
+            stateCopy.acseptingPayments = { ...state.acseptingPayments, acsepting: false }
             return stateCopy
         default:
             return state
