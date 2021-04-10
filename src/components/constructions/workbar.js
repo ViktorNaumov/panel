@@ -30,11 +30,19 @@ const Workbar = () => {
           </NavLink>
         )}
       />
-       <Route
+      <Route
         path="/orders"
         render={() => (
           <NavLink to="/orders/payment">
             <BarItem name="Оплата" />
+          </NavLink>
+        )}
+      />
+      <Route
+        path="/production"
+        render={() => (
+          <NavLink to="/production/request">
+            <BarItem name="Создать заявку" />
           </NavLink>
         )}
       />

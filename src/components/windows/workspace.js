@@ -1,10 +1,12 @@
 import React from "react";
 import { Route } from "react-router";
 import HoldwindContainer from "../../conteiners/holdwindContainer";
+import RequestwindContainer from "../../conteiners/requestwindContainer";
 import StockdwindContainer from "../../conteiners/stockwindContainer";
 // import PaymentForm from "../constructions/paymentform";
 import PaymentForm from "../constructions/paymentform"
 import Workbar from "../constructions/workbar";
+
 
 const Workspace = () => {
   return (
@@ -14,6 +16,7 @@ const Workspace = () => {
         <Route path="/handinput/holders" render={() => <HoldwindContainer />} />
         <Route path="/handinput/stock" render={() => <StockdwindContainer />} />
         <Route path="/orders/payment" render={() => < PaymentForm/>} />
+        <Route path="/production/request" render={() => < RequestwindContainer/>} />
       </div>
     </div>
   );

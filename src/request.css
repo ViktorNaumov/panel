@@ -1,0 +1,16 @@
+.requestblock {
+    width: 95%;
+    height: 50px;
+    background:turquoise ;
+    margin-left: 10px;
+    
+}
+
+.requestlable{
+    float: left;
+    width: 70%;
+}
+
+.leblebutton{
+    margin: 10px;
+}

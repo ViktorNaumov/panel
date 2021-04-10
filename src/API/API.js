@@ -40,3 +40,7 @@ export const getOrderPayment = (value) => {
   return axios.post("http://localhost:3012/api/get/orderpayment", { value });
 };
 
+export const getRequest = (value) => {
+  return axios.post("http://localhost:3013/api/request", { value });
+};
+

@@ -87,16 +87,17 @@
 .workbar {
   display: flex;
   flex-direction: row;
+  height: 80px;
 }
 
 .baritem {
   display: block;
   float: left;
-  width: 5%;
+  width: 20%;
   height:40px;
   font-size: 20px;
   text-align: center;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 
