@@ -14,6 +14,10 @@ export const setOrderPayment = (value) => {
   return axios.post("http://localhost:3012/api/set/orderpayment", { value });
 };
 
+export const setDataRequest = (value) => {
+  return axios.post("http://localhost:3013/api/set/datarequest", { value });
+};
+
 
 
 export const getThickness = (value) => {
@@ -41,6 +45,10 @@ export const getOrderPayment = (value) => {
 };
 
 export const getRequest = (value) => {
-  return axios.post("http://localhost:3013/api/request", { value });
+  return axios.post("http://localhost:3012/api/get/request", { value });
+};
+
+export const getDataRequest = (value) => {
+  return axios.post("http://localhost:3012/api/get/datarequest", { value });
 };
 

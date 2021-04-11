@@ -1,4 +1,4 @@
-import {getRequest} from "../API/API"
+import {getRequest, getDataRequest,setDataRequest} from "../API/API"
 
 const GET_REQUEST ="GET-REQUEST";
 
@@ -7,21 +7,24 @@ const initialState = {
 }
 
 const requestReduser = (state = initialState , action) =>{
-    // let stateCopy;
-    // stateCopy = { ...state };
+    let stateCopy;
+    stateCopy = { ...state };
 
 
     switch (action.type) {
-        // case ddddd:
-            
-        //     return stateCopy
+        case GET_REQUEST:
+           stateCopy = {...state,requests:action.array} 
+            return stateCopy;
+        default:
+            return state;
     }
-return state;
+
 }
 
-export const getRequestCreator = () => {
+export const getRequestCreator = (value) => {
     return {
         type: GET_REQUEST,
+        array : value
 
     }
 }
@@ -32,13 +35,36 @@ export const getRequestThunkCreator = () =>{
         .then((response)=>{
             if(response){
                 if(response.data){
-                    if(response.data.value){
-                        console.log(response.data.value)
+                    if(response.data.resultCode === 0){
+                        dispatch(getRequestCreator(response.data.value))
+                        console.log(response.data)
                     }
                 }
             }
         })
     }
 }
+
+export const getDataRequestThunkCreator = (value) =>{
+    console.log(value)
+    return (dispatch) =>{
+        getDataRequest(value)
+        .then((value)=>{
+            console.log(value.data.value)
+            setDataRequest(value.data.value)
+        })
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 export default requestReduser;
