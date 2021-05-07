@@ -3,7 +3,6 @@ import { Route } from "react-router";
 import HoldwindContainer from "../../conteiners/holdwindContainer";
 import RequestwindContainer from "../../conteiners/requestwindContainer";
 import StockdwindContainer from "../../conteiners/stockwindContainer";
-// import PaymentForm from "../constructions/paymentform";
 import PaymentForm from "../constructions/paymentform"
 import Workbar from "../constructions/workbar";
 

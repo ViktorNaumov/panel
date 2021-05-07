@@ -18,6 +18,7 @@ const ERROR_ACSEPTING_PAYMENT = "ERROR-ACSEPTING-PAYMENT";
 const ACSEPTING_PAYMENT = "ACSEPTING-PAYMENT";
 const ERROR_WAS_PAID = "ERROR-WAS-PAID"
 
+
 const ordersReduser = (state = initialState, action) => {
     let stateCopy;
     stateCopy = { ...state };

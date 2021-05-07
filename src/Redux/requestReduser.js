@@ -1,9 +1,12 @@
 import {getRequest, getDataRequest,setDataRequest} from "../API/API"
 
 const GET_REQUEST ="GET-REQUEST";
+const CHOICE_REQUEST ="CHOICE-REQUEST"
+
 
 const initialState = {
-    requests : []
+    requests : [],
+    choicerequest : 0
 }
 
 const requestReduser = (state = initialState , action) =>{
@@ -15,6 +18,9 @@ const requestReduser = (state = initialState , action) =>{
         case GET_REQUEST:
            stateCopy = {...state,requests:action.array} 
             return stateCopy;
+        case CHOICE_REQUEST:
+            stateCopy = {...state,choicerequest:action.request}
+            return stateCopy
         default:
             return state;
     }
@@ -54,6 +60,13 @@ export const getDataRequestThunkCreator = (value) =>{
             setDataRequest(value.data.value)
         })
         
+    }
+}
+
+export const choiceRequestCreator = (value) =>{
+    return{
+        type: CHOICE_REQUEST,
+        request : value
     }
 }
 

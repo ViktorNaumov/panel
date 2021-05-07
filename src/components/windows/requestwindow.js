@@ -3,7 +3,7 @@ import Requestblock from "../constructions/requestblock";
 
 const Requestwindow =(props)=>{
     let f =()=>{
-        props.getdatarequest(1)
+        props.getdatarequest(props.choicerequest)
     }
 
     return(
@@ -13,7 +13,7 @@ const Requestwindow =(props)=>{
                 <button onClick={f}>Создать заявку</button>
             </div>
             <div>
-                <Requestblock requests={props.requests}/>
+                <Requestblock requests={props.requests} choice={props.choice} choicerequest={props.choicerequest}/>
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Requestwindow from "../components/windows/requestwindow";
-import { getDataRequestThunkCreator, getRequestThunkCreator } from "../Redux/requestReduser";
+import { choiceRequestCreator, getDataRequestThunkCreator, getRequestThunkCreator } from "../Redux/requestReduser";
 
 class RequestWindContainer extends React.Component {
     componentDidMount(){
@@ -19,6 +19,7 @@ const mapStateToProps = (state) => {
 
     return {
         requests: state.requests.requests,
+        choicerequest: state.requests.choicerequest
     //   thicknessarr: state.handinput.thickness,
     };
   };
@@ -29,6 +30,9 @@ const mapStateToProps = (state) => {
         },
         getdatarequest:(value) =>{
             dispatch(getDataRequestThunkCreator(value))
+        },
+        choice:(value)=>{
+            dispatch(choiceRequestCreator(value))
         }
     //   getthickness: (thicknessarr) => {
     //     dispatch(getthicknessThunkCreator(thicknessarr));

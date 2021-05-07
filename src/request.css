@@ -3,6 +3,20 @@
     height: 50px;
     background:turquoise ;
     margin-left: 10px;
+    float: left;
+    border: transparent  2px solid;
+    margin-top: 2px;
+    
+}
+
+.requestblockborder {
+    width: 95%;
+    height: 50px;
+    background:turquoise ;
+    margin-left: 10px;
+    float: left;
+    border: black  2px solid;
+    margin-top: 2px;
     
 }
 
